@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         return view('admin.products.index', [
             'products' => Product::latest()->get(),
-            'featured' => FeaturedProducts::pluck('id')->toArray()
+            'featured' => FeaturedProducts::pluck('product_id')->toArray()
         ]);
     }
 
