@@ -21,7 +21,6 @@
     {{-- css bootstrap --}}
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-    @livewireStyles
 </head>
 
 <body>
@@ -34,7 +33,6 @@
     <script src="{{ asset('assets/bootstrap/jquery-3.6.1.min.js') }}"></script>
     <script src="{{ asset('assets/bootstrap/bootstrap.js') }}"></script>
 
-    @livewireScripts
 </body>
 
 </html>
