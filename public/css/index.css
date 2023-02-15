@@ -119,6 +119,16 @@ img {
   height: auto;
 }
 
+.alert {
+  position: absolute;
+  top: 75px;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 90;
+  box-shadow: 100vmax 100vmax 100vmax rgba(49, 49, 49, 0.327);
+  transition: var(--transition-eo-25);
+}
+
 
 /* =====##### Navbar #####===== */
 header{

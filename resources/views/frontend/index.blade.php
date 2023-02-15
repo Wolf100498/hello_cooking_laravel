@@ -4,9 +4,10 @@
 
 @section('content')
     <div class="container-modified" id="hero-main">
-        @if (Session::has('success'))
+        {{-- @if (Session::has('success'))
             {{ Session::get('success') }}
-        @endif
+        @endif --}}
+        @include('sweetalert::alert')
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 @foreach ($heroSlides = App\Models\HeroSlide::all() as $key => $heroSlide)

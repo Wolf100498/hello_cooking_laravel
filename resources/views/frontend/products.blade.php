@@ -1,11 +1,14 @@
     @extends('layouts.frontend')
 
     @section('title', 'HelloCooking - Products')
-    @push('css')
-        <link rel="stylesheet" href="{{ asset('css/products.css') }}">
-    @endpush
 
     @section('content')
+        @if ($success != null)
+            <div class="alert alert-success alert-dismissible" role="alert">
+                {{ $success }}
+                <button class="btn-close btn-sm" type="button" data-bs-dismiss="alert"></button>
+            </div>
+        @endif
         <div class="container" id="filter">
             <div class="d-flex gap-2">
                 <form action="" method="GET" id="search-">
