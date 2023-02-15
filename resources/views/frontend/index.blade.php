@@ -68,10 +68,18 @@
                             <div class='p-2 recipe-category-cards'>
                                 <input type="hidden" name="id" value={{ $feature->product->id }}>
                                 <article class="card h-100 position-relative">
-                                    <div class="card-img-container" onclick="alert({{ $feature->product->id }})">
+                                    <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#product-modal"
+                                        data-prod_name="{{ $feature->product->product_name }}"
+                                        data-prod_img="{{ $feature->product->product_img }}"
+                                        data-prod_desc="{{ $feature->product->product_desc }}"
+                                        data-prod_price="{{ $feature->product->product_price }}">
                                         <img src={{ asset($feature->product->product_img) }} alt="" />
                                     </div>
-                                    <div class="description" onclick="alert({{ $feature->product->id }})">
+                                    <div class="description" data-bs-toggle="modal" data-bs-target="#product-modal"
+                                        data-prod_name="{{ $feature->product->product_name }}"
+                                        data-prod_img="{{ $feature->product->product_img }}"
+                                        data-prod_desc="{{ $feature->product->product_desc }}"
+                                        data-prod_price="{{ $feature->product->product_price }}">
                                         <div class="line line1 mb-1">
                                             <h5>{{ $feature->product->product_name }}</h5>
                                         </div>
@@ -83,7 +91,8 @@
 
                                     </div>
                                     <div
-                                        class="card-button position-absolute bottom-0 start-0 p-1 pe-2 w-100 d-flex justify-content-end">
+                                        class="card-button position-absolute bottom-0 start-0 p-1 px-2 w-100 d-flex justify-content-between">
+                                        <p>₱ <span>{{ $feature->product->product_price }}.00</span></p>
                                         <a href="{{ route('home.addtocart', ['id' => $feature->product->id]) }}"
                                             class="btn btn-success btn-sm ms-full"><i class="fa-solid fa-cart-plus"></i></a>
                                     </div>
@@ -238,6 +247,25 @@
             </div>
         </div>
     </section>
+    <div class="modal fade product-modal" id="product-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="" id="prod-img" alt="">
+                </div>
+                <div class="modal-body">
+                    <h3 id="prod-name" class="mb-2"></h3>
+                    <p class="mb-1">Good for 2 persons</p>
+                    <p class="mb-1">₱ <span id="prod-price"></span>.00</p>
+                    <p id="prod-desc" class="mb-1"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-sm btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 
@@ -296,5 +324,22 @@ ${content.question}
             }).join(''));
         };
         faq();
+
+        $(document).ready(function() {
+            $(function() {
+                $('#product-modal').on('show.bs.modal', function(e) {
+                    var button = $(e.relatedTarget);
+                    var prod_name = button.data('prod_name');
+                    var prod_price = button.data('prod_price');
+                    var prod_desc = button.data('prod_desc');
+                    var prod_img = button.data('prod_img');
+                    var modal = $(this);
+                    modal.find('#prod-name').text(prod_name);
+                    modal.find('#prod-desc').text(prod_desc);
+                    modal.find('#prod-img').attr('src', prod_img);
+                    modal.find('#prod-price').text(prod_price);
+                });
+            });
+        });
     </script>
 @endsection

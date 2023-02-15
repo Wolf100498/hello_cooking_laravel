@@ -34,12 +34,7 @@ class HomeController extends Controller
     public function addToCart($id){
 
         $this->add($id);
-        return view('frontend.index', [
-            'categories' => $this->categories,
-            'features' => $this->features,
-            'heroSlides' => $this->heroSlides
-
-        ]);
+        return redirect('/')->with('message', 'Product added to cart');
     }
 
     public function add($id){
