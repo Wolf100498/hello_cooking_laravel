@@ -3,8 +3,12 @@
 
 @section('content')
     <section>
-        @if (Session::has('error'))
-            {{ Session::get('error') }}
+        @if (session('danger'))
+            <div x-data="{ open: true }" x-init='setTimeout(() => open = false, 2000)' x-show="open"
+                x-transition.duration.600ms class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('danger') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         @endif
 
         <div class="container-md cart">

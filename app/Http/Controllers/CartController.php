@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -24,13 +25,7 @@ class CartController extends Controller
         $optionsCategory = Category::where('category_status', 'show')->get();
         $products = Product::where('product_status', 'Available')->get();
         $this->add($id);
-
-        return view('frontend.products', [
-            'totalCartAmount' => $this->totalAmount(),
-            'categories' => $categories,
-            'optionsCategory' => $optionsCategory,
-            'products' => $products
-            ])->with('success', 'Product added to cart successfully!');
+        return redirect('/recipes')->with('message', 'Product added to cart successfully');
     }
 
 
@@ -85,18 +80,18 @@ class CartController extends Controller
         $id = $request->product_id;
         if($request->quantity == 0){
             $request->session()->forget('cart.'.$request->product_id);
-        return redirect()->route('cart')->with('success', 'Product quantity updated');
+        return redirect('/cart')->with('message', 'Product quantity updated');
 
         }
         $cart[$id]['quantity'] = $request->quantity;
         session()->put('cart', $cart);
         
-        return redirect()->route('cart')->with('success', 'Product quantity updated');
+        return redirect()->route('cart')->with('message', 'Product quantity updated');
     }
 
     public function destroy(Request $request, $id){
         $request->session()->forget('cart.'.$id);
-        return redirect()->route('cart')->with('success', 'Product quantity updated');
+        return redirect('/cart')->with('danger', 'Product remove from cart.');
     }
 
     protected function totalAmount(){

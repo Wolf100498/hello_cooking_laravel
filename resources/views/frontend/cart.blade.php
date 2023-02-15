@@ -2,11 +2,25 @@
 
 
 @section('content')
+    @if (session('message'))
+        <div x-data="{ open: true }" x-init='setTimeout(() => open = false, 2000)' x-show="open" x-transition.duration.600ms
+            class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('message') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (session('danger'))
+        <div x-data="{ open: true }" x-init='setTimeout(() => open = false, 2000)' x-show="open" x-transition.duration.600ms
+            class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('danger') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <section>
         <div class="container-md cart">
             <h1>Shopping Cart</h1>
             <div class="row">
-                @if (sizeOf(session('cart')))
+                @if (session('cart') !== null)
                     <div class="col-lg-8">
 
                         @foreach (session('cart') as $id => $details)

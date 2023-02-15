@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18442768ca4a35086260b77a23d1e7a7",
+    "content-hash": "ea618df209d56c72b8a90d957d3d15af",
     "packages": [
         {
             "name": "brick/math",
@@ -60,77 +60,6 @@
                 }
             ],
             "time": "2023-01-15T23:15:59+00:00"
-        },
-        {
-            "name": "bumbummen99/shoppingcart",
-            "version": "4.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bumbummen99/LaravelShoppingcart.git",
-                "reference": "1c50fb564826b6ee748d2d9afad7447b6884166e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bumbummen99/LaravelShoppingcart/zipball/1c50fb564826b6ee748d2d9afad7447b6884166e",
-                "reference": "1c50fb564826b6ee748d2d9afad7447b6884166e",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/events": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0||^8.0||^9.0",
-                "illuminate/session": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0||^8.0||^9.0",
-                "illuminate/support": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0||^8.0||^9.0",
-                "nesbot/carbon": "~1.20||^1.26.3||^2.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^3.4|^4.0|^5.0|^6.0",
-                "phpunit/phpunit": "~5.0||~6.0||~7.0||~8.0||~9.0"
-            },
-            "suggest": {
-                "gloudemans/notify": "Simple flash notifications for Laravel"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider"
-                    ],
-                    "aliases": {
-                        "Cart": "Gloudemans\\Shoppingcart\\Facades\\Cart"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Gloudemans\\Shoppingcart\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rob Gloudemans",
-                    "email": "info@robgloudemans.nl",
-                    "homepage": "http://robgloudemans.nl/"
-                },
-                {
-                    "name": "Patrick Henninger",
-                    "email": "privat@skyraptor.eu",
-                    "homepage": "https://skyraptor.eu/"
-                }
-            ],
-            "description": "Laravel Shoppingcart",
-            "keywords": [
-                "laravel",
-                "shoppingcart"
-            ],
-            "support": {
-                "issues": "https://github.com/bumbummen99/LaravelShoppingcart/issues",
-                "source": "https://github.com/bumbummen99/LaravelShoppingcart/tree/4.2.0"
-            },
-            "time": "2022-05-15T15:32:38+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -1118,81 +1047,17 @@
             "time": "2021-10-07T12:57:01+00:00"
         },
         {
-            "name": "hardevine/shoppingcart",
-            "version": "3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hardevine/LaravelShoppingcart.git",
-                "reference": "fc734910e8d5c69e711a02784010ae687d0fd908"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hardevine/LaravelShoppingcart/zipball/fc734910e8d5c69e711a02784010ae687d0fd908",
-                "reference": "fc734910e8d5c69e711a02784010ae687d0fd908",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/events": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6|^7|^8|^9",
-                "illuminate/session": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6|^7|^8|^9",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6|^7|^8|^9"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9.0",
-                "orchestra/testbench": "~3.1",
-                "phpunit/phpunit": "~5.0 || ~6.0 || ~7.0"
-            },
-            "suggest": {
-                "gloudemans/notify": "Simple flash notifications for Laravel"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider"
-                    ],
-                    "aliases": {
-                        "Cart": "Gloudemans\\Shoppingcart\\Facades\\Cart"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Gloudemans\\Shoppingcart\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rob Gloudemans",
-                    "email": "info@robgloudemans.nl"
-                }
-            ],
-            "description": "Laravel Shoppingcart",
-            "keywords": [
-                "laravel",
-                "shoppingcart"
-            ],
-            "support": {
-                "issues": "https://github.com/hardevine/LaravelShoppingcart/issues",
-                "source": "https://github.com/hardevine/LaravelShoppingcart/tree/3.1"
-            },
-            "time": "2022-02-17T07:23:57+00:00"
-        },
-        {
             "name": "laravel/framework",
-            "version": "v9.51.0",
+            "version": "v9.52.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b81123134349a013a738a9f7f715c6ce99d5a414"
+                "reference": "eb85cd9d72e5bfa54b4d0d9040786f26d6184a9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b81123134349a013a738a9f7f715c6ce99d5a414",
-                "reference": "b81123134349a013a738a9f7f715c6ce99d5a414",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/eb85cd9d72e5bfa54b4d0d9040786f26d6184a9e",
+                "reference": "eb85cd9d72e5bfa54b4d0d9040786f26d6184a9e",
                 "shasum": ""
             },
             "require": {
@@ -1377,7 +1242,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-02-07T15:37:18+00:00"
+            "time": "2023-02-14T14:51:14+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -3907,16 +3772,16 @@
         },
         {
             "name": "srmklive/paypal",
-            "version": "3.0.17",
+            "version": "3.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/srmklive/laravel-paypal.git",
-                "reference": "13ab15d3f5e6b6ad77a22440416267e0f1f92eba"
+                "reference": "0090adfe44bfff7fe14cf3ee0f8df56d72cccb59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/srmklive/laravel-paypal/zipball/13ab15d3f5e6b6ad77a22440416267e0f1f92eba",
-                "reference": "13ab15d3f5e6b6ad77a22440416267e0f1f92eba",
+                "url": "https://api.github.com/repos/srmklive/laravel-paypal/zipball/0090adfe44bfff7fe14cf3ee0f8df56d72cccb59",
+                "reference": "0090adfe44bfff7fe14cf3ee0f8df56d72cccb59",
                 "shasum": ""
             },
             "require": {
@@ -3966,9 +3831,9 @@
             ],
             "support": {
                 "issues": "https://github.com/srmklive/laravel-paypal/issues",
-                "source": "https://github.com/srmklive/laravel-paypal/tree/3.0.17"
+                "source": "https://github.com/srmklive/laravel-paypal/tree/3.0.18"
             },
-            "time": "2023-02-10T15:16:42+00:00"
+            "time": "2023-02-13T19:28:00+00:00"
         },
         {
             "name": "symfony/console",
@@ -6698,16 +6563,16 @@
         },
         {
             "name": "laravel/pint",
-            "version": "v1.4.1",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/pint.git",
-                "reference": "80ddf23a5d97825e79bb1018eebb6f3f985d4fa8"
+                "reference": "e0a8cef58b74662f27355be9cdea0e726bbac362"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/80ddf23a5d97825e79bb1018eebb6f3f985d4fa8",
-                "reference": "80ddf23a5d97825e79bb1018eebb6f3f985d4fa8",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/e0a8cef58b74662f27355be9cdea0e726bbac362",
+                "reference": "e0a8cef58b74662f27355be9cdea0e726bbac362",
                 "shasum": ""
             },
             "require": {
@@ -6718,13 +6583,13 @@
                 "php": "^8.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.14",
-                "illuminate/view": "^9.32.0",
+                "friendsofphp/php-cs-fixer": "^3.14.4",
+                "illuminate/view": "^9.51.0",
                 "laravel-zero/framework": "^9.2.0",
                 "mockery/mockery": "^1.5.1",
-                "nunomaduro/larastan": "^2.2.0",
-                "nunomaduro/termwind": "^1.14.0",
-                "pestphp/pest": "^1.22.1"
+                "nunomaduro/larastan": "^2.4.0",
+                "nunomaduro/termwind": "^1.15.1",
+                "pestphp/pest": "^1.22.4"
             },
             "bin": [
                 "builds/pint"
@@ -6760,20 +6625,20 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
-            "time": "2023-01-31T15:50:45+00:00"
+            "time": "2023-02-14T16:31:02+00:00"
         },
         {
             "name": "laravel/sail",
-            "version": "v1.20.1",
+            "version": "v1.20.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "4b85dbfa3dceeaf7227e3029707562fd60297e86"
+                "reference": "5ae072b182b1efbec927409e8a3ce3b1078cc42c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/4b85dbfa3dceeaf7227e3029707562fd60297e86",
-                "reference": "4b85dbfa3dceeaf7227e3029707562fd60297e86",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/5ae072b182b1efbec927409e8a3ce3b1078cc42c",
+                "reference": "5ae072b182b1efbec927409e8a3ce3b1078cc42c",
                 "shasum": ""
             },
             "require": {
@@ -6821,7 +6686,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2023-02-08T02:08:37+00:00"
+            "time": "2023-02-08T20:22:21+00:00"
         },
         {
             "name": "mockery/mockery",

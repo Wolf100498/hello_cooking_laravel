@@ -65,7 +65,7 @@ class PaypalController extends Controller
             }
     
             session()->forget('cart');
-            return redirect()->route('order.index');
+            return redirect('/')->with('message', 'Placing order successful');
             exit();
         }
 
@@ -119,17 +119,15 @@ class PaypalController extends Controller
                 }
 
 
-                    return redirect()->away($links['href']);
+                    return redirect($links['href'])->with('message', 'Order placed successfully');
                 }
             }
 // b)roQT{9
-            return redirect()
-                ->route('paymentindex')
-                ->with('error', 'Something went wrong1.');
+            return redirect('/checkout')
+                ->with('danger', 'Something went wrong1.');
         } else {
-            return redirect()
-                ->route('paymentindex')
-                ->with('error', $response['message'] ?? 'Something went wrong2.');
+            return redirect('/checkout')
+                ->with('danger', $response['message'] ?? 'Something went wrong2.');
         }
     }
 

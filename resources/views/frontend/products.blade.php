@@ -3,10 +3,11 @@
     @section('title', 'HelloCooking - Products')
 
     @section('content')
-        @if ($success != null)
-            <div class="alert alert-success alert-dismissible" role="alert">
-                {{ $success }}
-                <button class="btn-close btn-sm" type="button" data-bs-dismiss="alert"></button>
+        @if (session('message'))
+            <div x-data="{ open: true }" x-init='setTimeout(() => open = false, 2000)' x-show="open"
+                x-transition.duration.600ms class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('message') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
         <div class="container" id="filter">

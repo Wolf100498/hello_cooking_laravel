@@ -23,6 +23,7 @@
     <script
         src="https://www.paypal.com/sdk/js?client-id=AcoAHSB5sZHU2xCtWZwcoX6UeJ20FD8rgehhDwKvdZsuIQOZiqeVaHC77KoDcU0Ty91bzlJWgHMbVTds">
     </script>
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body id="body">

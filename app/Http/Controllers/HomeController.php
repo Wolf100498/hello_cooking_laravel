@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\FeaturedProducts;
 use App\Models\HeroSlide;
 use App\Models\Product;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
