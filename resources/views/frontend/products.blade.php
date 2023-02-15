@@ -35,7 +35,7 @@
                 <div class="container">
 
                     @foreach ($categories as $category)
-                        <div class="product-section-container">
+                        <div class="product-section-container {{ $category }}">
 
                             <h4 class="mb-3" id="product-section-subheading">{{ $category->category_name }}</h4>
 
@@ -45,20 +45,10 @@
                                         <div class='p-2 recipe-category-cards'>
                                             <input type="hidden" name="id" value={{ $product->id }}>
                                             <article class="card h-100 position-relative">
-                                                <div class="card-img-container" data-bs-toggle="modal"
-                                                    data-bs-target="#product-modal"
-                                                    data-product_name="{{ $product->product_name }}"
-                                                    data-product_img="{{ $product->product_img }}"
-                                                    data-product_price="{{ $product->product_price }}"
-                                                    data-product_desc="{{ $product->product_desc }}">
+                                                <div class="card-img-container" onclick="alert({{ $product->id }})">
                                                     <img src={{ asset($product->product_img) }} alt="" />
                                                 </div>
-                                                <div class="description" data-bs-toggle="modal"
-                                                    data-bs-target="#product-modal"
-                                                    data-product_name="{{ $product->product_name }}"
-                                                    data-product_img="{{ $product->product_img }}"
-                                                    data-product_price="{{ $product->product_price }}"
-                                                    data-product_desc="{{ $product->product_desc }}">
+                                                <div class="description" onclick="alert({{ $product->id }})">
                                                     <div class="line line1 mb-1">
                                                         <h5>{{ $product->product_name }} </h5>
                                                     </div>
@@ -69,8 +59,7 @@
                                                     </div>
                                                 </div>
                                                 <div
-                                                    class="card-button position-absolute bottom-0 start-0 p-1 px-2 w-100 d-flex justify-content-between">
-                                                    <p>₱ {{ $product->product_price }}.00</p>
+                                                    class="card-button position-absolute bottom-0 start-0 p-1 pe-2 w-100 d-flex justify-content-end">
                                                     <a href={{ route('recipes.addtocart', ['id' => $product->id]) }}
                                                         class="btn btn-success btn-sm"><i
                                                             class="fa-solid fa-cart-plus"></i></a>
@@ -85,45 +74,5 @@
                 </div>
             </section>
         </div>
-        <div class="modal fade product-modal" id="product-modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <img src="" id="product-img" alt="">
-                    </div>
-                    <div class="modal-body">
-                        <h3 id="product-name" class="mb-2"></h3>
-                        <p class="mb-2">Good for 2 Persons</p>
-                        <p class="mb-2">₱ <span id="product-price"></span>.00</p>
-                        <p id="product-desc"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
 
     @endsection
-    @push('scripts')
-        <script>
-            $(document).ready(function() {
-                $(function() {
-                    $('#product-modal').on('show.bs.modal', function(e) {
-                        var button = $(e.relatedTarget);
-                        var productName = button.data('product_name');
-                        var productImg = button.data('product_img');
-                        var productDesc = button.data('product_desc');
-                        var productPrice = button.data('product_price');
-                        var modal = $(this);
-                        modal.find('#product-name').text(productName);
-                        modal.find('#product-img').attr('src', productImg);
-                        modal.find('#product-price').text(productPrice);
-                        modal.find('#product-desc').text(productDesc);
-                    })
-                })
-            });
-        </script>
-    @endpush

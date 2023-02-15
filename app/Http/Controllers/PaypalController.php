@@ -58,10 +58,10 @@ class PaypalController extends Controller
                     'order_id' => $order->id,
                     'product_id' => $cartItem['product_id'],
                     'quantity' => $cartItem['quantity'],
-                    'price' => $cartItem['product_price'] * $cartItem['quantity']
+                    'price' => $cartItem['product_price']
                 ]);
                 $totalProductCount += $cartItem['quantity'];
-                $totalProductAmount += ($cartItem['product_price']);
+                $totalProductAmount += $cartItem['product_price'];
             }
     
             session()->forget('cart');
