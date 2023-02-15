@@ -644,7 +644,13 @@ footer::selection { background-color: rgb(var(--green)); }
   object-position: center;
 }
 .card .description { padding: 10px }
-.card .description .hash p { font-size: var(--fs-14); }
+.card .description .hash p { 
+  font-size: var(--fs-14); 
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
 
 .card-button {
   z-index: 90;
